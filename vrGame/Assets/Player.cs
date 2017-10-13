@@ -13,7 +13,12 @@ public class Player : MonoBehaviour {
 	void Update () {
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, transform.forward, out hit)){
-			Debug.Log (hit.transform.name);
+			//Debug.Log (hit.transform.name);
+			if(hit.transform.GetComponent<DoorButton> () != null){
+				Debug.Log ("Looked at door button!");
+				hit.transform.GetComponent<DoorButton> ().OnLook ();
+
+			}
 		}
 	}
 }
