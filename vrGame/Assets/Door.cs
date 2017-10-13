@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
 	public Vector3 loweredPosition;
+	public float speed = 3f;
 	private Vector3 targetPosition;
 
 	// Use this for initialization
@@ -14,11 +15,11 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime);
+		transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime * speed);
 	}
 
 	public void LowerDoor (){
-		Debug.Log ("Lowered door!");
+		//Debug.Log ("Lowered door!");
 		targetPosition = loweredPosition;
 	}
 }

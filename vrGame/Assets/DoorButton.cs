@@ -17,7 +17,7 @@ public class DoorButton : MonoBehaviour {
 	}
 
 	public void OnLook () {
-		Debug.Log ("Button lowering Door!");
+		//Debug.Log ("Button lowering Door!");
 		door.LowerDoor ();
 	}
 }
